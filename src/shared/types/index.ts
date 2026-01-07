@@ -3,3 +3,4 @@ export * from "./pet";
 export * from "./service";
 export * from "./appointment";
 export * from "./settings";
+export * from "../enums/appointment-status";

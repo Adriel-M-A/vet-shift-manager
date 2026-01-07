@@ -98,12 +98,12 @@ export default function ClientFormSheet({
             <SheetContent className="sm:max-w-xl overflow-y-auto">
                 <SheetHeader>
                     <SheetTitle>
-                        {clientToEdit ? "Edit Client" : "Create Client"}
+                        {clientToEdit ? "Editar Cliente" : "Crear Cliente"}
                     </SheetTitle>
                     <SheetDescription>
                         {clientToEdit
-                            ? "Make changes to the client profile here."
-                            : "Add a new client to the system."}
+                            ? "Realice cambios en el perfil del cliente aquí."
+                            : "Agregue un nuevo cliente al sistema."}
                     </SheetDescription>
                 </SheetHeader>
 
@@ -114,9 +114,9 @@ export default function ClientFormSheet({
                             name="full_name"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Full Name</FormLabel>
+                                    <FormLabel>Nombre Completo</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="John Doe" {...field} />
+                                        <Input placeholder="Juan Pérez" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -127,7 +127,7 @@ export default function ClientFormSheet({
                             name="document_number"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Document Number</FormLabel>
+                                    <FormLabel>Número de Documento</FormLabel>
                                     <FormControl>
                                         <Input placeholder="12345678" {...field} />
                                     </FormControl>
@@ -140,7 +140,7 @@ export default function ClientFormSheet({
                             name="phone"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Phone</FormLabel>
+                                    <FormLabel>Teléfono</FormLabel>
                                     <FormControl>
                                         <Input placeholder="+1 234 567 890" {...field} />
                                     </FormControl>
@@ -155,7 +155,7 @@ export default function ClientFormSheet({
                                 <FormItem>
                                     <FormLabel>Email</FormLabel>
                                     <FormControl>
-                                        <Input type="email" placeholder="john@example.com" {...field} />
+                                        <Input type="email" placeholder="juan@ejemplo.com" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -166,10 +166,10 @@ export default function ClientFormSheet({
                             name="notes"
                             render={({ field }) => (
                                 <FormItem>
-                                    <FormLabel>Notes</FormLabel>
+                                    <FormLabel>Notas</FormLabel>
                                     <FormControl>
                                         <Textarea
-                                            placeholder="Any additional notes..."
+                                            placeholder="Cualquier nota adicional..."
                                             className="resize-none"
                                             {...field}
                                         />
@@ -180,9 +180,9 @@ export default function ClientFormSheet({
                         />
                         <SheetFooter>
                             <Button type="button" variant="outline" onClick={onClose}>
-                                Cancel
+                                Cancelar
                             </Button>
-                            <Button type="submit">Save</Button>
+                            <Button type="submit">Guardar</Button>
                         </SheetFooter>
                     </form>
                 </Form>

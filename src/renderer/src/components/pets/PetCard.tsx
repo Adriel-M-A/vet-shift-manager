@@ -94,7 +94,7 @@ export function PetCard({ pet, clientId, isExpanded, onToggleExpand, onSave }: P
                         {/* Name */}
                         <div className="font-semibold text-lg max-w-[150px] truncate">
                             {isNew ? (
-                                <span className="text-muted-foreground italic">Add New Pet...</span>
+                                <span className="text-muted-foreground italic">Nueva Mascota...</span>
                             ) : (
                                 pet?.name
                             )}
@@ -149,55 +149,55 @@ export function PetCard({ pet, clientId, isExpanded, onToggleExpand, onSave }: P
                     <div className="grid grid-cols-3 gap-4">
                         {/* Row 1 */}
                         <div className="space-y-2">
-                            <Label htmlFor="name">Name</Label>
+                            <Label htmlFor="name">Nombre</Label>
                             <Input
                                 id="name"
                                 value={formData.name}
                                 onChange={(e) => handleChange('name', e.target.value)}
-                                placeholder="Pet Name"
+                                placeholder="Nombre Mascota"
                             />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="species">Species</Label>
+                            <Label htmlFor="species">Especie</Label>
                             <select
                                 id="species"
                                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 value={formData.species}
                                 onChange={(e) => handleChange('species', e.target.value)}
                             >
-                                <option value="Dog">Dog</option>
-                                <option value="Cat">Cat</option>
-                                <option value="Rabbit">Rabbit</option>
-                                <option value="Hamster">Hamster</option>
-                                <option value="Other">Other</option>
+                                <option value="Dog">Perro</option>
+                                <option value="Cat">Gato</option>
+                                <option value="Rabbit">Conejo</option>
+                                <option value="Hamster">Roedor</option>
+                                <option value="Other">Otro</option>
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="gender">Gender</Label>
+                            <Label htmlFor="gender">Género</Label>
                             <select
                                 id="gender"
                                 className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                                 value={formData.gender || 'male'}
                                 onChange={(e) => handleChange('gender', e.target.value)}
                             >
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="male">Macho</option>
+                                <option value="female">Hembra</option>
                             </select>
                         </div>
 
                         {/* Row 2 */}
                         <div className="space-y-2">
-                            <Label htmlFor="breed">Breed</Label>
+                            <Label htmlFor="breed">Raza</Label>
                             <Input
                                 id="breed"
                                 value={formData.breed || ''}
                                 onChange={(e) => handleChange('breed', e.target.value)}
-                                placeholder="Breed"
+                                placeholder="Raza"
                             />
                         </div>
 
                         <div className="space-y-2">
-                            <Label htmlFor="age">Age (yrs)</Label>
+                            <Label htmlFor="age">Edad (años)</Label>
                             <Input
                                 id="age"
                                 type="number"
@@ -207,7 +207,7 @@ export function PetCard({ pet, clientId, isExpanded, onToggleExpand, onSave }: P
                             />
                         </div>
                         <div className="space-y-2">
-                            <Label htmlFor="weight">Weight (kg)</Label>
+                            <Label htmlFor="weight">Peso (kg)</Label>
                             <Input
                                 id="weight"
                                 type="number"
@@ -221,19 +221,19 @@ export function PetCard({ pet, clientId, isExpanded, onToggleExpand, onSave }: P
                         {/* Row 3 (Full width notes) */}
                     </div>
                     <div className="mt-4 space-y-2">
-                        <Label htmlFor="notes">Notes</Label>
+                        <Label htmlFor="notes">Notas</Label>
                         <Input
                             id="notes"
                             value={formData.notes || ''}
                             onChange={(e) => handleChange('notes', e.target.value)}
-                            placeholder="Any notes..."
+                            placeholder="Notas adicionales..."
                         />
                     </div>
 
                     <div className="mt-4 flex justify-end">
                         <Button onClick={handleSave} size="sm">
                             <Save className="h-4 w-4 mr-2" />
-                            {isNew ? 'Create Pet' : 'Update Pet'}
+                            {isNew ? 'Crear Mascota' : 'Actualizar Mascota'}
                         </Button>
                     </div>
                 </CardContent>

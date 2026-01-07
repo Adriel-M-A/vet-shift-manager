@@ -11,10 +11,10 @@ import { LayoutDashboard, Calendar, Users, Settings as SettingsIcon } from 'luci
 
 export default function Sidebar() {
     const navItems = [
-        { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { to: '/dashboard', label: 'Inicio', icon: LayoutDashboard },
         { to: '/agenda', label: 'Agenda', icon: Calendar },
-        { to: '/clients', label: 'Clients', icon: Users },
-        { to: '/settings', label: 'Settings', icon: SettingsIcon },
+        { to: '/clients', label: 'Clientes', icon: Users },
+        { to: '/settings', label: 'Configuración', icon: SettingsIcon },
     ];
 
     return (

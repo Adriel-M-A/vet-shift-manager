@@ -62,15 +62,15 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
             {/* Row 1: Client Info Card */}
             <Card>
                 <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                    <CardTitle className="text-xl font-bold">Client Information</CardTitle>
+                    <CardTitle className="text-xl font-bold">Información del Cliente</CardTitle>
                     <div className="flex space-x-2">
                         <Button variant="outline" size="sm" onClick={onEdit}>
                             <Edit className="mr-2 h-4 w-4" />
-                            Edit
+                            Editar
                         </Button>
                         <Button size="sm">
                             <CalendarPlus className="mr-2 h-4 w-4" />
-                            New Appointment
+                            Nueva Cita
                         </Button>
                     </div>
                 </CardHeader>
@@ -79,11 +79,11 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
                         {/* Column 1: Identity */}
                         <div className="space-y-4">
                             <div>
-                                <h4 className="text-sm font-medium text-muted-foreground">Full Name</h4>
+                                <h4 className="text-sm font-medium text-muted-foreground">Nombre Completo</h4>
                                 <p className="text-lg font-semibold">{client.full_name}</p>
                             </div>
                             <div>
-                                <h4 className="text-sm font-medium text-muted-foreground">Document Number</h4>
+                                <h4 className="text-sm font-medium text-muted-foreground">Número de Documento</h4>
                                 <p className="text-lg font-mono">{client.document_number}</p>
                             </div>
                         </div>
@@ -91,10 +91,10 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
                         {/* Column 2: Contact */}
                         <div className="space-y-4">
                             <div>
-                                <h4 className="text-sm font-medium text-muted-foreground">Contact</h4>
+                                <h4 className="text-sm font-medium text-muted-foreground">Contacto</h4>
                                 <div className="grid grid-cols-1 gap-1">
                                     <span className="flex items-center gap-2">
-                                        <span className="font-medium text-sm w-12">Phone:</span>
+                                        <span className="font-medium text-sm w-12">Tel:</span>
                                         <span>{client.phone || "N/A"}</span>
                                     </span>
                                     <span className="flex items-center gap-2">
@@ -104,9 +104,9 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
                                 </div>
                             </div>
                             <div>
-                                <h4 className="text-sm font-medium text-muted-foreground">Notes</h4>
+                                <h4 className="text-sm font-medium text-muted-foreground">Notas</h4>
                                 <p className="text-sm text-muted-foreground whitespace-pre-wrap">
-                                    {client.notes || "No notes available."}
+                                    {client.notes || "No hay notas disponibles."}
                                 </p>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
                 {/* Column 1: Pet Selection */}
                 <div className="space-y-4">
                     <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-semibold">Pets</h3>
+                        <h3 className="text-lg font-semibold">Mascotas</h3>
                         {/* Show add button mainly when we have pets and it's not the single-always-expanded empty case (though even then... wait. 
                              If pets=0, we show 1 card (Create). 
                              If pets=1, we show 1 card (Edit). 
@@ -128,7 +128,7 @@ export default function ClientDetails({ client, onEdit }: ClientDetailsProps) {
                         {pets.length > 0 && (
                             <Button variant="outline" size="sm" onClick={() => setExpandedPetId('new')}>
                                 <Plus className="h-4 w-4 mr-2" />
-                                Add Pet
+                                Agregar Mascota
                             </Button>
                         )}
                     </div>

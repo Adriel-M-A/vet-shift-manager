@@ -2,7 +2,8 @@ import { ipcMain } from "electron";
 import {
   PETS_CHANNELS,
   CreatePetRequest,
-  GetPetsByClientRequest
+  GetPetsByClientRequest,
+  UpdatePetRequest
 } from "../../shared/ipc/pets.ipc";
 import petRepository from "../db/repositories/pet.repository";
 
@@ -21,6 +22,14 @@ export function registerPetHandlers() {
     (_, request: GetPetsByClientRequest) => {
       const items = petRepository.getPetsByClient(request.clientId);
       return { items };
+    }
+  );
+
+  ipcMain.handle(
+    PETS_CHANNELS.UPDATE,
+    (_, request: UpdatePetRequest) => {
+      const result = petRepository.updatePet(request.id, request.data);
+      return { success: result.changes > 0 };
     }
   );
 }

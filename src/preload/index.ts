@@ -72,6 +72,13 @@ const api = {
       data: GetPetsByClientRequest
     ): Promise<GetPetsByClientResponse> {
       return ipcRenderer.invoke(PETS_CHANNELS.GET_BY_CLIENT, data);
+    },
+
+    update(
+      id: number,
+      data: Partial<CreatePetDTO>
+    ): Promise<{ success: boolean }> {
+      return ipcRenderer.invoke(PETS_CHANNELS.UPDATE, { id, data });
     }
   }
 
